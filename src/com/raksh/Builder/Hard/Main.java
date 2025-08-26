@@ -1,0 +1,45 @@
+package com.raksh.Builder.Hard;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+/*
+ * Builder pattern : It is creational design pattern used to create complex presentation of objects.
+ * Let's say you have class which has initially 4 fields, so you decided to go with constructor then few more fields added
+ * in same class which are optional and class modification goes on. So one choice is to have different args constructor.
+ * That is good but till some extent how we will remember which argument number for what if list is so big!!!
+ * Having this type of constructor is called as Telescoping constructor pattern where we keep having separate constructor as and when
+ * we have new arguments.
+ *
+ * One more option is to use setters method but that has chances of missing pieces of some mandatory fields which leads to inconsistent object.
+ *
+ * By builder patter we take responsibility of creating object and providing back to client. Client just provides input and until
+ * they won't call build method we won't create object.
+ *
+ * Builder pattern is also used when single class has different object representation  meaning let's say We are creating
+ * Burger which can be Veg, non veg ... which can have extra cheese or less cheese, bread size medium , large.
+ * As user, you will say only I need one extra cheese large veg burger.
+ *
+ * To do so you can also have different builders which eventually passes the argument which are required to create that object.
+ *
+ *
+ * Reference : https://www.tutorialspoint.com/design_pattern/builder_pattern.htm
+ * https://springframework.guru/gang-of-four-design-patterns/builder-pattern/
+ */
+public class Main {
+
+    public static void main(String[] args){
+        Payment payment=new Payment.PaymentBuilder()
+                .cardHolderName("Anonymous")
+                .cardNumber("1234 5678 9123 4567")
+                .cvv("123")
+                .expiryDate("12/26")
+                .build();
+
+        Booking booking=new Booking.BookingBuilder("Anonymous",Type.DOUBLE,LocalDate.of(2025,8,10),LocalDate.of(2025,9,10))
+                .paymentDetails(payment)
+                .airportPickup(true)
+                .build();
+        System.out.println(booking);
+
+    }
+}

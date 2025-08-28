@@ -1,4 +1,4 @@
-package com.raksh.Adapter.Hard;
+package com.designPattern.Adapter.Hard;
 
 import java.util.ArrayList;
 import java.util.Arrays;

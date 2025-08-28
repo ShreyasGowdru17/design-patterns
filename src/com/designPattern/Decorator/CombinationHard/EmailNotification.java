@@ -1,74 +1,47 @@
-package com.raksh.Decorator.CombinationHard;
+package com.designPattern.Decorator.CombinationHard;
 
 import java.util.Map;
 
-public class EmailNotification extends Notification{
-    private String recipient;
-    private String subject;
-    private String body;
-    private boolean highPriority;
-    private Map<String,String> metaData;
-
-    private EmailNotification(Builder builder){
+public class EmailNotification implements Notification{
+    private final String recipient;
+    private final String subject;
+    private final String body;
+    private EmailNotification(Builder builder) {
         this.recipient=builder.recipient;
-        this.subject=builder.subject;
-        this.body=builder.body;
-        this.highPriority=builder.highPriority;
-        this.metaData=builder.metaData;
+        this.subject= builder.subject;
+        this.body= builder.body;
+    }
+
+    @Override
+    public String getMessage() {
+        return subject+'-'+body;
     }
     @Override
     public String getRecipient() {
         return recipient;
     }
     @Override
-    public String getSubject() {
-        return subject;
+    public void send() {
+        System.out.println("Sending Mail to"+recipient+":"+getMessage());
     }
-    @Override
-    public String getBody() {
-        return body;
-    }
-    @Override
-    public boolean isHighPriority() {
-        return highPriority;
-    }
-    @Override
-    public Map<String, String> getMetaData() {
-        return metaData;
-    }
-    static class Builder extends NotificationBuilder{
-        private String recipient;
-        private String subject;
-        private String body;
-        private boolean highPriority;
-        private Map<String,String> metaData;
-        @Override
-        public NotificationBuilder recipient(String recipient) {
+    public static class Builder{
+        private  String recipient;
+        private  String subject;
+        private  String body;
+
+        public Builder recipient(String recipient){
             this.recipient=recipient;
             return this;
         }
-        @Override
-        public NotificationBuilder subject(String subject) {
+        public Builder subject(String subject){
             this.subject=subject;
             return this;
         }
-        @Override
-        public NotificationBuilder body(String body) {
+        public Builder body(String body){
             this.body=body;
             return this;
         }
-        @Override
-        public NotificationBuilder highPriority(boolean highPriority) {
-            this.highPriority=highPriority;
-            return this;
-        }
-        @Override
-        public NotificationBuilder metaData(Map<String, String> metaData) {
-            this.metaData=metaData;
-            return this;
-        }
-        @Override
-        public Notification build() {
+        public EmailNotification build(){
             return new EmailNotification(this);
         }
     }

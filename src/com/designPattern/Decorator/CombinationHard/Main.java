@@ -1,4 +1,4 @@
-package com.raksh.Decorator.CombinationHard;
+package com.designPattern.Decorator.CombinationHard;
 /*
 **Context**:
 You are designing a **Notification System** that supports different channels (Email, SMS, Push).
@@ -121,7 +121,16 @@ public class Main {
     Simple thought process create abstract class for Builder pattern
     then extend them for decorator 
      */
+    public static void main(String[] args){
+       Notification email=new EmailNotification.Builder()
+               .recipient("raksh@example.com")
+               .subject("Interview update")
+               .body("Your interview is scheduled for tomorrow")
+               .build();
 
+       Notification decoratedEmail=new EncryptionDecorator(new RetryDecorator(new LoggingDecorator(email)));
 
-
+       NotificationManager manager=NotificationManager.getInstance();
+       manager.dispatch(decoratedEmail);
+    }
 }

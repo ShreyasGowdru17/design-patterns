@@ -1,4 +1,4 @@
-package com.raksh.Adapter.Hard;
+package com.designPattern.Adapter.Hard;
 
 public interface Stripe {
     boolean makeCharge(double money);

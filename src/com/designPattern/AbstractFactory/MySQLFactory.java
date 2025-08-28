@@ -1,4 +1,4 @@
-package com.raksh.AbstractFactory;
+package com.designPattern.AbstractFactory;
 
 public class MySQLFactory implements DBFactory {
 

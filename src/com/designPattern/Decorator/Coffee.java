@@ -1,4 +1,4 @@
-package com.raksh.Decorator;
+package com.designPattern.Decorator;
 
 public interface Coffee {
     String getDescription();

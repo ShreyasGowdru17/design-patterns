@@ -1,4 +1,4 @@
-package com.raksh.Builder;
+package com.designPattern.Builder;
 
 import java.util.ArrayList;
 import java.util.List;

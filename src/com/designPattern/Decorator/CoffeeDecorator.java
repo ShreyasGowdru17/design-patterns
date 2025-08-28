@@ -1,4 +1,4 @@
-package com.raksh.Decorator;
+package com.designPattern.Decorator;
 
 public abstract class CoffeeDecorator implements Coffee{
     protected Coffee coffee;

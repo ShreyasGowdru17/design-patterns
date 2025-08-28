@@ -1,4 +1,4 @@
-package com.raksh.Builder.singelton;
+package com.designPattern.Builder.singelton;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.raksh.Decorator;
+package com.designPattern.Decorator;
 
 public class Milk extends CoffeeDecorator{
     public Milk(Coffee coffee) {

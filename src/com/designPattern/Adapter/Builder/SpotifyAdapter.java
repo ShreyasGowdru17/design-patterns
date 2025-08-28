@@ -1,4 +1,4 @@
-package com.raksh.Adapter.Builder;
+package com.designPattern.Adapter.Builder;
 
 public class SpotifyAdapter implements MediaPlayer{
     private SpotifyService spotifyService;

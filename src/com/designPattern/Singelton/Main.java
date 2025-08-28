@@ -1,4 +1,4 @@
-package com.raksh.Singelton;
+package com.designPattern.Singelton;
 /*
 Problem Statement — Thread-Safe Logger Singleton
 

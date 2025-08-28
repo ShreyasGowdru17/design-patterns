@@ -1,4 +1,4 @@
-package com.raksh.Adapter.Hard;
+package com.designPattern.Adapter.Hard;
 
 public interface Crypto {
     boolean transferFunds(double value);

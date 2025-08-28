@@ -1,4 +1,4 @@
-package com.raksh.Builder;
+package com.designPattern.Builder;
 
 public enum Size {
     LARGE,

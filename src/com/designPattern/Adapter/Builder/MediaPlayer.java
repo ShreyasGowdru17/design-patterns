@@ -1,4 +1,4 @@
-package com.raksh.Adapter.Builder;
+package com.designPattern.Adapter.Builder;
 
 public interface MediaPlayer {
     String play(String file);

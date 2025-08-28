@@ -1,4 +1,4 @@
-package com.raksh.Builder.Hard;
+package com.designPattern.Builder.Hard;
 
 public class Payment {
     private String cardNumber;
